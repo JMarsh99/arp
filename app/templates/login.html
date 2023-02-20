@@ -1,0 +1,23 @@
+{% set no_nav = true %}
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="d-flex flex-column align-items-center p-5">
+        <h3 class="">Jordan's ARP</h3>
+        <form method="POST" action="/login">
+            <div class="mb-3">
+                <input class="form-control" type="email" name="email" placeholder="Your Email" autofocus="">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="password" name="password" placeholder="Your Password">
+            </div>
+            <div class="form-check mb-3">
+                <label class="form-check-label checkbox">
+                    <input class="form-check-input" type="checkbox" name="remember">
+                    Remember me
+                </label>
+            </div>
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
+{% endblock %}

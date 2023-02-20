@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ARP</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium Web">
+        <link rel="stylesheet" type="text/css" href="css/app.css">
+    <body>
+        {% if not no_nav %}
+            <nav class="navbar navbar-light px-3 py-1 d-flex justify-content-between align-items-center">
+                <div class="hamburger-icon"><i class="bi bi-list"></i></div>
+                <div><h3>Jordan's ARP</h3></div>
+                <div><i class="bi bi-gear-fill"></i></div>
+            </nav>
+            <div>
+                <ul class="hamburger pt-4">
+                    <li class="h5">Projects</li>
+                </ul>
+            </div>
+        {% endif %}
+
+        <div class="container py-1">
+            {% block content %}
+            {% endblock %}
+        </div>
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const hamburgerIcon = document.querySelector(".hamburger-icon");
+        function toggleMenu() {
+            if (hamburger.classList.contains("show-hamburger")) {
+                hamburger.classList.remove("show-hamburger");
+            } else {
+                hamburger.classList.add("show-hamburger");
+            }
+        }
+        hamburgerIcon.addEventListener("click", toggleMenu);
+    </script>
+    </body>
+</html>
