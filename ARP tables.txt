@@ -1,0 +1,34 @@
+User (id, email, name, password)
+
+UserCharacters (user_id, character_id)
+Characters (id, name, role(player, real), category(friendly, neutral, enemy))
+Stats (character_id, strength, dexterity, constitution, wisdom, intelligence, charisma)
+CharacterWeapons (character_id, name, description, damage)
+CharacterItems (character_id, name, description)
+
+UserAdventures (user_id, adventure_id)
+Adventure (id, name, background)
+
+StoryText (user_id, character_id, adventure_id, text, type(text, roll, action))
+
+Non-MVP
+Weapons(id, name, description, damage)
+Items(id, name, description)
+
+StatEffect(character_stats_id, resource_id, resource_table, stat, effect)
+WeaponEffect(character_weapon_id, resource_id, resource_table, effect)
+
+Many Users control many Characters
+Characters have Stats
+Characters have many CharacterWeapons (not just weapons as weapons can be character specific, "it's Jordan's steel sword not just a steel sword"
+Characters have many CharacterItems
+
+Many Users have many Adventures
+Adventures have story text which is said by a user with a certain character
+
+Non-MVP
+General Weapons can be copied into CharacterWeapons
+General Items can be copied into CharacterItems
+
+Character Weapons have many WeaponEffects which are caused by a resource(weapon, item)
+Character Stats have many StatEffects which are caused by a resource(weapon, item)
